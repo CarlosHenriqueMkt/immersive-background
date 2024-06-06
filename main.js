@@ -21,7 +21,6 @@ const texture = new THREE.TextureLoader().load('symmetrical_garden_02.jpg')
 const material = new THREE.MeshBasicMaterial({ map: texture, side: THREE.BackSide })
 
 const skyBox = new THREE.Mesh(skyGeo, material)
-skyBox.userData = 'no-occlusion'
 scene.add(skyBox)
 
 
@@ -50,8 +49,8 @@ window.addEventListener('resize', () => {
 const canvas = document.querySelector('.webgl');
 const renderer = new THREE.WebGLRenderer({ canvas: canvas });
 renderer.outputColorSpace = THREE.LinearSRGBColorSpace
-document.body.appendChild(renderer.domElement);
 renderer.setSize(size.width, size.height);
+renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 
 //Controle para olhar em volta
 const controls = new OrbitControls(camera, canvas)
@@ -63,13 +62,20 @@ const clock = new THREE.Clock()
 console.log(clock)
 
 const animation = () => {
-  /* const elapsedTime = clock.getElapsedTime()
-  console.log(elapsedTime)
+  const elapsedTime = clock.getElapsedTime();
 
-  camera.position.x = elapsedTime * 2 */
+  // Atualiza a posição da câmera para fazer uma rotação em torno da origem
+/*   camera.position.x = 8.5 * Math.cos(elapsedTime * 0.2);
+  camera.position.z = 8.5 * Math.sin(elapsedTime * 0.2);
+  camera.lookAt(scene.position); */
+
+  //Atualizador dos controles da camera
   controls.update()
+
+  //Atualização frame a frame do renderizador
   renderer.render(scene, camera);
 
+  //Atualização de frames
   requestAnimationFrame(animation)
 }
 
