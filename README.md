@@ -14,13 +14,13 @@ Antes de começar, certifique-se de ter instalado os seguintes softwares:
 1. Clone o repositório:
 
    ```bash
-   git clone https://github.com/seu-usuario/seu-repositorio.git
+   git clone https://github.com/<seu-usuario>/threejs-immersive-background.git
    ```
 
 2. Navegue até o diretório do projeto:
 
    ```bash
-   cd seu-repositorio
+   cd threejs-immersive-background
    ```
 
 3. Instale as dependências:
@@ -40,7 +40,7 @@ Antes de começar, certifique-se de ter instalado os seguintes softwares:
 1. Inicie um servidor de desenvolvimento local:
 
    ```bash
-   npm start
+   npm start ou npm run dev
    ```
 
 2. Abra seu navegador e navegue para `http://localhost:3000` para ver a aplicação em execução.
