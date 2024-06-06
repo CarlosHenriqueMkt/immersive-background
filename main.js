@@ -2,7 +2,6 @@ import '/style.css';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 
-
 //Cena
 const scene = new THREE.Scene();
 THREE.ColorManagement.enabled = false
@@ -59,15 +58,14 @@ controls.enableZoom = false
 
 //Relógio utilizado para atualização/animação frame a frame
 const clock = new THREE.Clock()
-console.log(clock)
 
 const animation = () => {
   const elapsedTime = clock.getElapsedTime();
 
   // Atualiza a posição da câmera para fazer uma rotação em torno da origem
-/*   camera.position.x = 8.5 * Math.cos(elapsedTime * 0.2);
-  camera.position.z = 8.5 * Math.sin(elapsedTime * 0.2);
-  camera.lookAt(scene.position); */
+  camera.position.x = 8.5 * Math.cos(elapsedTime * 0.1);
+  camera.position.z = 8.5 * Math.sin(elapsedTime * 0.1);
+  camera.lookAt(scene.position);
 
   //Atualizador dos controles da camera
   controls.update()
