@@ -14,13 +14,13 @@ Antes de começar, certifique-se de ter instalado os seguintes softwares:
 1. Clone o repositório:
 
    ```bash
-   git clone https://github.com/<seu-usuario>/immersive-background.git
+   git clone https://github.com/<seu-usuario>/threejs-immersive-background.git
    ```
 
 2. Navegue até o diretório do projeto:
 
    ```bash
-   cd immersive-background
+   cd threejs-immersive-background
    ```
 
 3. Instale as dependências:
